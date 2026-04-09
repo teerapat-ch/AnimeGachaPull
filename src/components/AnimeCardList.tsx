@@ -15,7 +15,7 @@ interface AnimeResponse {
 
 const AnimeCardList = ({ data }: Props) => {
   return (
-    <div className="flex justify-center gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-5 justify-items-center gap-8">
       {data &&
         data.results.map((items, index) => (
           <AnimeCard key={index} artist_href={items.artist_href} artist_name={items.artist_name} source_url={items.source_url} url={items.url} />

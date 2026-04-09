@@ -14,6 +14,7 @@ interface AnimeResponse {
 const App = () => {
 
   const [data, setData] = useState<AnimeResponse>()
+  const [amount, setAmount] = useState<number>(5)
 
   const fetchAnime = async () => {
     const res = await fetch('https://nekos.best/api/v2/waifu?amount=5')
