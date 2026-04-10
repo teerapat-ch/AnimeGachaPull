@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "./components/ui/button"
 import AnimeCardList from "./components/AnimeCardList"
 import { Slider } from "./components/ui/slider"
+import axios from "axios"
 
 interface AnimeResponse {
   results: {
@@ -18,9 +19,8 @@ const App = () => {
   const [amount, setAmount] = useState<number[]>([5])
 
   const fetchAnime = async () => {
-    const res = await fetch(`https://nekos.best/api/v2/waifu?amount=${amount[0]}`)
-    const json: AnimeResponse = await res.json()
-    setData(json)
+    const res = await axios.get<AnimeResponse>(`https://nekos.best/api/v2/waifu?amount=${amount[0]}`)
+    setData(res.data)
   }
 
   return (
