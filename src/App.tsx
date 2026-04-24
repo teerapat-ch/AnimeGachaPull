@@ -32,7 +32,7 @@ const App = () => {
         max={10}
         step={1}
         onValueChange={(val) => setAmount(val)}
-        className="w-1/8 mb-4"
+        className="w-1/2 md:w-1/8 mb-4"
       />
       <Button onClick={() => fetchAnime()} className="px-6 py-6 mb-4 hover:cursor-pointer w-30 bg-gray-600">
         <h1 className="text-4xl">Pull</h1>
